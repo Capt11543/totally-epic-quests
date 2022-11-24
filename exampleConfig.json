@@ -1,0 +1,6 @@
+{
+    "token": "YOUR_BOT'S_TOKEN_HERE",
+    "clientId": "YOUR_BOT'S_CLIENT_ID_HERE",
+    "logPath": "YOUR_LOG_PATH_HERE",
+    "savesPath": "YOUR_SAVES_PATH_HERE"
+}

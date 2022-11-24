@@ -1,6 +1,6 @@
 const { SlashCommandBuilder, PermissionFlagsBits, ActionRowBuilder, ButtonBuilder, ButtonStyle, EmbedBuilder } = require(`discord.js`)
 const { loadQuests, saveQuests, loadPlayers, savePlayers, loadConfig, saveConfig } = require(`../game/gameData.js`)
-const { Quest } = require(`../game/quest.js`)
+const Quest = require(`../game/quest.js`)
 const TurnInMessage = require("../game/turnInMessage.js")
 
 module.exports = {

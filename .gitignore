@@ -4,6 +4,7 @@ logs/
 saves/
 .vscode/
 .vs/
+built/
 
 #Files
 config.json

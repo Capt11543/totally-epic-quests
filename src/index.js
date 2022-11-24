@@ -1,5 +1,5 @@
 const { Client, Collection, GatewayIntentBits } = require(`discord.js`)
-const { token } = require(`./config.json`)
+const { token, logPath } = require(`../config.json`)
 const fs = require(`fs`)
 const path = require(`path`)
 const Logger = require(`./utils/logger.js`)
@@ -7,7 +7,7 @@ const Logger = require(`./utils/logger.js`)
 const client = new Client({intents: [GatewayIntentBits.Guilds]})
 
 var logFilename = `${Logger.now().replaceAll(':', '_')}.txt`
-const logger = new Logger(path.join(__dirname, `logs`, logFilename))
+const logger = new Logger(path.join(__dirname, logPath, logFilename))
 
 const eventsPath = path.join(__dirname, `events`)
 const eventFiles = fs.readdirSync(eventsPath).filter(file => file.endsWith(`.js`))

@@ -1,8 +1,9 @@
 const fs = require(`fs`)
 const path = require(`path`)
+const { savesPath } = require(`../../config.json`)
 
 function saveData(data, filename) {
-    fs.writeFile(path.join(__dirname, `..`, `saves`, filename), JSON.stringify(data), (err) => {
+    fs.writeFile(path.join(__dirname, `..`, savesPath, filename), JSON.stringify(data), (err) => {
         if(err) {
             throw err
         }
@@ -88,7 +89,7 @@ function loadPlayers(guildId, logger = null) {
     let players
 
     try {
-        players = require(path.join(__dirname, `..`, `saves`, filename))
+        players = require(path.join(__dirname, `..`, savesPath, filename))
     } catch(err) {
         if(logger) {
             logger.log(`Error loading ${filename}`)
@@ -113,7 +114,7 @@ function loadQuests(guildId, logger = null) {
     let quests
 
     try {
-        quests = require(path.join(__dirname, `..`, `saves`, filename))
+        quests = require(path.join(__dirname, `..`, savesPath, filename))
     } catch(err) {
         if(logger) {
             logger.log(`Error loading ${filename}`)
@@ -139,7 +140,7 @@ function loadConfig(guildId, logger = null) {
     let config
 
     try {
-        config = require(path.join(__dirname, `..`, `saves`, filename))
+        config = require(path.join(__dirname, `..`, savesPath, filename))
     } catch(err) {
         if(logger) {
             logger.log(`Error loading ${filename}`)
